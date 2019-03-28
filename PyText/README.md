@@ -1,8 +1,8 @@
-#PyText
+# PyText
 
 PyText is a Python based text adventure.
 
-##Commands:
+## Commands:
 
 | Command				| Discription	|
 | -------------			| ------------- |
