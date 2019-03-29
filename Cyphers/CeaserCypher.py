@@ -39,6 +39,7 @@ def getKey():
 
 	return key
 
+# Encrypt and Decrypt can probably be merged.
 
 def encrypt(message, key):
 	"""
