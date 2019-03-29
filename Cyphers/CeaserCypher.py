@@ -91,10 +91,58 @@ def encrypt(message, key):
 	return encryptedMessage
 
 
+def decrypt(message, key):
+	preDecrypt = []
+	postDecrypt = []
+	decryptedMessage = ""
+
+	for character in message:		# Add each character value to a list.
+		preDecrypt.append(ord(character))
+
+	for value in preDecrypt:
+
+		if value in range(65, 90):
+			value -= key		# Add encryption, changing the value of the character.
+			if value < 65:		# If the value is out of range of the alphabet, cycle.
+				value += 25
+			postDecrypt.append(value)	# Add to post encrypt list.
+
+		elif value in range(97, 122):
+			value -= key
+			if value < 97:
+				value +=25
+			postDecrypt.append(value)
+
+		elif value == 32:
+			postDecrypt.append(value)	# Keeps list in order to cycle through the space.
+
+		else:
+			raise Exception("Unexpected value in message.")
+	
+	
+	for item in postDecrypt:
+		decryptedMessage += chr(item)
+
+	return decryptedMessage
+
+
 
 def main():
-	key = getKey()
-	message = getString()
-	print("Encrypted message:", encrypt(message,key))
+	end = False
+	while end != True:
+		option = input("Encrypt or decrypt? (e/d) ")
+		key = getKey()
+		message = getString()
+
+		if option == "e":	# Encrypt
+			print("Encrypted message:", encrypt(message,key))
+
+		elif option == "d":		# Decrypt
+			print("Decrypted message:", decrypt(message,key))
+
+		repeat = input("End? (y/n) ")
+
+		if repeat == "y":
+			break
 
 main()
