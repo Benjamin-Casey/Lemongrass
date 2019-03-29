@@ -1,13 +1,6 @@
 """
 A program that converts one string to another through the process of encryption.
 
-Process:
-1. Take a string and increment value.
-2. Convert that string to char values (numbers representing characters, e.g 1-26).
-3. Increment each char value by the amount indicated by the cypher. If the value is greater than 26 (the number of letters in the alphabet, -26).
-4. Return to string.
-5. Print.
-
 the ord("...") takes a character (string) and outputs an integer of its value (only takes one character at a time).
 LOWERCASE: a = 97, z = 122.
 UPPERCASE: A = 65, Z = 90.
