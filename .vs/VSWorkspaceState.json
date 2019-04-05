@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Cyphers",
+    "\\PyTCG",
+    "\\PyText"
   ],
-  "SelectedNode": "\\Cyphers",
+  "SelectedNode": "\\Cyphers\\CeaserCypher.py",
   "PreviewInSolutionExplorer": false
 }

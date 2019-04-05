@@ -1,7 +1,11 @@
 class Item:
-    def __init_(self, name, description):
+    def __init__(self, name, description):
         self.name = name
         self.description = description
 
     def __str__(self):
         return """{}""".format(self.description)
+
+class Weapon(Item):
+	def __init__(self, name, description, attack):
+		self.attack = attack
