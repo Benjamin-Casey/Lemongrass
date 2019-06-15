@@ -1,0 +1,40 @@
+What does a text adventure need
+
+
+1. Player
+	- HP
+	- Location
+	- Damage
+	- Inventory
+
+
+2. Tiles
+	- Name
+	- Description
+	- Enemies Present (Boolean)
+	- Loot Present (Boolean)
+	- Coordinates
+
+
+3. Items
+	- Description
+	- Name
+
+	Subs:
+	- Consumable
+		- Effect
+	- Weapon
+		- Damage
+
+
+4. NPCs
+	- HP 
+	- Description
+
+	Subs:
+	- Enemies
+		- Loot
+	- NPC
+		- Dialogue etc
+		- Loot table
+	- Merchant

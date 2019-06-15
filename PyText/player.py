@@ -26,5 +26,4 @@ class Player:
 
     def attack(self, target):
         if self.attack == 0:
-            print("")
-
+            print("Cannot attack!")
