@@ -1,28 +1,26 @@
 # Game
 import Player, Tiles
+from Commands import commands, command_info
 
-# Get the player object from the Player.py file (defined at the bottom)
-# Get the meadow object Tiles.py
 player = Player.player
-meadow = Tiles.meadow
-
-# List of tiles in the world
-world = [meadow]
+world = Tiles.world
 
 
+# Everything within the following loop is a tick in the game.
 while player.victory == False and player.is_alive():
 
-	# Should be a function in world or something
-	for tile in world:
-		if tile.x == player.x and tile.y == player.y:
-			print(tile.description)
+	# Print tile description
+	print(player.current_tile())
 
-	# Should be a function on one line
-	p_input = input("What would you like to do?\n")
-	if p_input == "move north":
-		print("You move north")
-		player.move_north()
+	# Print available commands
+	for command in command_info:
+		print("{} - {}".format(command, command_info[command]))
 
+	player_input = input("\nWhat would you like to do?\n")
 
-print("end of file")
-input("Hit anything to end.")
+	# If the command entered by the player is not valid, it will return a KeyError.
+	try:
+		commands[player_input]()
+	except KeyError:
+		print("That is not a valid command.")
+		player_input = input("What would you like to do?\n")

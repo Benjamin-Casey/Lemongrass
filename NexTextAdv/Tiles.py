@@ -8,8 +8,8 @@ class Tile:
 		self.y = y
 		self.z = z
 
-	def __str__(self_):
-		return """Name: {}\n Description{}\n""".format(self.name, self.description)
+	def __str__(self):
+		return """\nName: {}\nDescription: {}\n(X, Y): ({},{})\n""".format(self.name, self.description, self.x, self.y)
 
 
 class Treasure_Room(Tile):
@@ -29,4 +29,9 @@ class Meadow(Tile):
 # Create tile object - two different ways, I don't know pros cons or the difference.
 
 #meadow = Meadow()
-#meadow = Tile("Meadow", "Blah", 0, 0, 0)
+meadow = Tile("Meadow", "Blah", 0, 0, 0)
+
+world = [
+	Tile("Meadow", "You stand in a meadow of daisies. To the north lies a forest", 0, 0, 0),
+	Tile("Forest", "You stand within a forest. Thick trees stand around you. To the south lies a forest.", 0, 1, 0)
+		]
