@@ -1,0 +1,26 @@
+"You can have this encompass every facet of life to an intergalactic scale"
+
+~ Single Player Experience ~
+
+	Colony builder type style
+	Events that impact value of certain resources (festival, drought)
+
+
+~ Group Player Experience ~
+
+	Towns - fuck this
+
+
+~ Market ~
+	
+	balancing inflation
+	Having money removed from the game via methods such as death or buying from NPC's
+	The market will have a desired total value that it will attempt to stay at?
+	If the market exceeds or falls short of this value, random events will occur to encourage the rise or fall of the total market value.
+	Fixed total market value?
+
+
+
+~ Items and their value ~
+
+	Items have hidden values.

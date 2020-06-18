@@ -1,4 +1,0 @@
-TODO:
-
-- Work out which type of object creation will be used - two types are seen in Tiles.py
-

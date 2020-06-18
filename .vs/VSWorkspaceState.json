@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\NexTextAdv"
+    "\\Cyphers",
+    "\\PyTCG"
   ],
-  "SelectedNode": "\\NexTextAdv\\Game.py",
+  "SelectedNode": "\\Cyphers\\CeaserCypher.py",
   "PreviewInSolutionExplorer": false
 }
