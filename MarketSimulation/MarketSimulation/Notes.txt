@@ -1,0 +1,4 @@
+
+Think about things before attempting to implement them. This will save so much time
+rather than attempting to code random shit, deleting all of it and trying again.
+Exampe: rewrote market 3 fucking times when the solution was so simple.

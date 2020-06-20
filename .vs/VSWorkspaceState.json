@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\GameJuan\\GameJuan"
+    "\\MarketSimulation",
+    "\\MarketSimulation\\MarketSimulation"
   ],
-  "SelectedNode": "\\GameJuan",
+  "SelectedNode": "\\MarketSimulation\\MarketSimulation\\MarketSimulation.csproj",
   "PreviewInSolutionExplorer": false
 }

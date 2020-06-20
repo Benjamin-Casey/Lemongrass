@@ -12,39 +12,39 @@ namespace MarketSimulation
 	 * which items are for sale and their price.
 	 *	
 	 * Variables:
-	 * - lowestPriceBuyList: Dictionary that contains the highest price buy
-	 * request for each item <Item name: Price>
-	 * - highestPriceSellList: Dictionary that contains the lowest price sell
-	 * request for each item <Item name: Price>
-	 * - buyListings: Dictionary that has key: name of the item, value: array
-	 * of all buy listings for that item name.
-	 * - sellListings: Dictionary that has key: name of item, value: array
-	 * of all sale listings for that time.
+	 * - marketListings;
 	 * 
-	 * NOTE: I've just realised that in a system where items are not traded for a
-	 *		 currency things like 'lowest price' isn't relevant. fucking kms.
-	 */
-	{
-		public Dictionary<string, int> lowestPriceBuyList;
-		public Dictionary<string, int> highestPriceSellList;
-		public Dictionary<string, int[]> buyListings;
-		public Dictionary<string, int[]> sellListings;
+	 * NOTE: There may only be need for one set of listings rather than buyListing
+	 *		 and sellListings since a listing implies that someone is always buying
+	 *		 AND selling something. The functionality of buyListing and sellListing
+	 *		 will be replaced with a sorting algorithm, e.g if you want to find a 
+	 *		 listing selling an item it will sort for that listing.
+	 */ 
+	{	
+		//public List<Listing> marketListings { get; set; }
 
-		public Market()
+        public static List<Listing> marketListings = new List<Listing>();
+		//public static List<Listing> marketListings;
+		public string Name { get; set; }
+
+        public Market(string name)
 		{
-
+            this.Name = name;
+			// this.marketListings = new List<Listing>;
+			// Need an option to give marketListings, or if one isn't given, have a 
+			// default constructor
 		}
-
-		void update_lowestPriceBuyList()
+		
+		
+		public static void addListing(Market market, Listing listing)
 		{
-			// Goes through each item in buyListings and get the lowest price for
-			// each item.
-		}
+			market.marketListings.Add(listing);
+            //marketListings[x] = new listing;
+        }
 
-		void update_highestPriceSellList()
+		public static void sortByItem()
 		{
-			// Goes through each item in sellListings and get the highest price
-			// for each item.
+			
 		}
 	}
 }
