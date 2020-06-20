@@ -19,13 +19,13 @@ namespace MarketSimulation
 			Market town1Market = new Market("Clunes");
 			Market town2Market = new Market("Everton Park");
 
-			Market.addListing(town1Market, lemonBuyList);
-			Market.addListing(town2Market, cowBuyList);
-
             Console.WriteLine(town2Market.Name);
 			town2Market.Name = "Clowns";
             Console.WriteLine(town2Market.Name);
             Console.ReadKey();
+
+			town1Market.addListing(lemonBuyList);
+			town2Market.addListing(cowBuyList);
         }
 	}
 }

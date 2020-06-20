@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,23 +24,26 @@ namespace MarketSimulation
 	{	
 		//public List<Listing> marketListings { get; set; }
 
-        public static List<Listing> marketListings = new List<Listing>();
+        public List<Listing> marketListings = new List<Listing>();
 		//public static List<Listing> marketListings;
+		//public string[] marketListings = new string[1];
 		public string Name { get; set; }
 
         public Market(string name)
 		{
-            this.Name = name;
-			// this.marketListings = new List<Listing>;
+            Name = name;
+			
 			// Need an option to give marketListings, or if one isn't given, have a 
 			// default constructor
 		}
 		
 		
-		public static void addListing(Market market, Listing listing)
+		public void addListing(Listing listing)
 		{
-			market.marketListings.Add(listing);
+			//market.marketListings[0] = listing;
+			marketListings.Add(listing);
             //marketListings[x] = new listing;
+			
         }
 
 		public static void sortByItem()

@@ -27,7 +27,7 @@ namespace MarketSimulation
 
 		public Listing(Item sellItem, int numberOfSellItem, Item buyItem, int numberOfBuyItem)
 		{
-			this.itemToSell = sellItem;
+			itemToSell = sellItem;
 			itemToBuy = buyItem;
 			numberToSell = numberOfSellItem;
 			numberToBuy = numberOfBuyItem;
