@@ -16,8 +16,8 @@ namespace MarketSimulation
 	 */
 	{
 		public string name;
-		// Description not necessary for test.
 		public int value;
+		// Description not necessary for test.
 
 		public Item(string itemName, int itemValue)
 		{
