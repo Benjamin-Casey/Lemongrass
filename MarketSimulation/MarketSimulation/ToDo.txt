@@ -3,3 +3,8 @@
 3. Flesh out towns, create towns, path finding algorithm based on location -> do towns need XY coords?
 
 1. Implement players with inventory, ability to add market listings
+
+Other:
+	- Remove market listing
+	- Creating a market listing should temporarily remove the items
+	  from the players inventory.

@@ -23,20 +23,20 @@ namespace MarketSimulation
             Name = name;
 		}
 		
-		public void addListing(Listing listing)
+		public void AddListing(Listing listing)
 		{
 			marketListings.Add(listing);
         }
 
 
-		public List<Listing> sortBySellingItem(Item item)
+		public List<Listing> SortBySellingItem(Item item)
 		// Returns all listings that are selling the specified item.
 		{
 			List<Listing> itemList = new List<Listing>();
 
 			foreach(Listing listing in marketListings)
 			{
-				if (listing.itemToSell == item)
+				if (listing.ItemToSell == item)
 				{
 					itemList.Add(listing);
 				}
@@ -46,14 +46,14 @@ namespace MarketSimulation
 		}
 
 
-		public List<Listing> sortByBuyingItem(Item item)
+		public List<Listing> SortByBuyingItem(Item item)
 		// Returns all listings that are buying the specified item.
 		{
 			List<Listing> itemList = new List<Listing>();
 
 			foreach (Listing listing in marketListings)
 			{
-				if (listing.itemToBuy == item)
+				if (listing.ItemToBuy == item)
 				{
 					itemList.Add(listing);
 				}
