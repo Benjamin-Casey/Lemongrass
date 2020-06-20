@@ -28,6 +28,7 @@ namespace MarketSimulation
 			marketListings.Add(listing);
         }
 
+
 		public List<Listing> sortBySellingItem(Item item)
 		// Returns all listings that are selling the specified item.
 		{
@@ -43,6 +44,7 @@ namespace MarketSimulation
 
 			return itemList;
 		}
+
 
 		public List<Listing> sortByBuyingItem(Item item)
 		// Returns all listings that are selling the specified item.

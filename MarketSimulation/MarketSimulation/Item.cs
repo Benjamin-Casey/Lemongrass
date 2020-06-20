@@ -24,5 +24,5 @@ namespace MarketSimulation
 			name = itemName;
 			value = itemValue;
 		}
-	}
+	} 
 }
