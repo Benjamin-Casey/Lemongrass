@@ -1,3 +1,5 @@
 ﻿1. Find a place to put the instantiation/creation of items and such
 2. Create an AI that buys and sells items from the market if the price meets criteria?
 3. Flesh out towns, create towns, path finding algorithm based on location -> do towns need XY coords?
+
+1. Implement players with inventory, ability to add market listings

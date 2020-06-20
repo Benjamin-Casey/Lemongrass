@@ -23,7 +23,6 @@ namespace MarketSimulation
 		public Town(string townName)
 		{
 			name = townName;
-			// nearbyTowns = nearbyTownsArray. Need a default constructor.
 		}
 	}
 }

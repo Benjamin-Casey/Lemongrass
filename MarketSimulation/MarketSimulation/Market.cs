@@ -47,7 +47,7 @@ namespace MarketSimulation
 
 
 		public List<Listing> sortByBuyingItem(Item item)
-		// Returns all listings that are selling the specified item.
+		// Returns all listings that are buying the specified item.
 		{
 			List<Listing> itemList = new List<Listing>();
 
