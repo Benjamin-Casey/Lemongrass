@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
+using System.Runtime.Remoting.Services;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,8 +10,20 @@ namespace MarketSimulation
 {
 	class Player
 	{
+		public int PlayerID { get; set; }
+		public string PlayerName { get; set; }
+
 		public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
 		
+		public Player(int Id, string name)
+		{
+			PlayerName = name;
+			PlayerID = Id;
+		}
+
+		public static List<Player> playerList = new List<Player>();
+
+
 
 		public void AddToInventory(Item item, int amt)
 		{
@@ -39,10 +53,37 @@ namespace MarketSimulation
 		}
 
 
-		public Listing CreateListing(Item sellItem, int numSellItem, Item buyItem, int numBuyItem)
+		public Listing CreateListing(Item sellItem, int numSellItem, Item buyItem, int numBuyItem, Player playerObject)
 		{
-			Listing buyListing = new Listing(sellItem, numSellItem, buyItem, numBuyItem);
+			Listing buyListing = new Listing(sellItem, numSellItem, buyItem, numBuyItem, playerObject);
 			return buyListing;
+		}
+
+		public static void CreatePlayer()
+		{
+			
+			Console.WriteLine("Enter Name:");
+			string userInput = Console.ReadLine();
+
+			Player newPlayer = new Player(playerList.Count + 1, userInput);
+			playerList.Add(newPlayer);
+			Console.WriteLine("Welcome {0}", newPlayer.PlayerName);
+
+			/*
+			if(playerList.Count > 0)
+			{
+				Player lastPlayer = playerList[playerList.Count - 1];
+			}
+			else 
+			{
+				add new player with id 0
+			}
+			*/
+
+			Console.ReadKey();
+
+
+
 		}
 	}
 }
