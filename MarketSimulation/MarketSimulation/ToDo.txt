@@ -2,9 +2,11 @@
 2. Create an AI that buys and sells items from the market if the price meets criteria?
 3. Flesh out towns, create towns, path finding algorithm based on location -> do towns need XY coords?
 
-1. Implement players with inventory, ability to add market listings
-
 Other:
 	- Remove market listing
 	- Creating a market listing should temporarily remove the items
 	  from the players inventory.
+
+	- Give everything that needs to be stored in a DB an ID. This could be
+	  a static var attached to a class to have a consistent ID that increases 
+	  each time a new type of that object is created.
