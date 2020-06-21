@@ -24,13 +24,15 @@ namespace MarketSimulation
 		public Item ItemToBuy { get; set; }
 		public int NumberToSell { get; set; }
 		public int NumberToBuy { get; set; }
+		public Player Player { get; set; }
 
-		public Listing(Item sellItem, int numberOfSellItem, Item buyItem, int numberOfBuyItem)
+		public Listing(Item sellItem, int numberOfSellItem, Item buyItem, int numberOfBuyItem, Player playerObject)
 		{
 			ItemToSell = sellItem;
 			ItemToBuy = buyItem;
 			NumberToSell = numberOfSellItem;
 			NumberToBuy = numberOfBuyItem;
+			Player = playerObject;
 		}
 	}
 }

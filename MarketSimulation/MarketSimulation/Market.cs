@@ -13,20 +13,20 @@ namespace MarketSimulation
 	 *	
 	 * Variables:
 	 * - marketListings: A list of all market buy and sell orders (listings).
-	 */ 
-	{	
-		public List<Listing> marketListings  = new List<Listing>();
+	 */
+	{
+		public List<Listing> marketListings = new List<Listing>();
 		public string Name { get; set; }
 
-        public Market(string name)
+		public Market(string name)
 		{
-            Name = name;
+			Name = name;
 		}
-		
+
 		public void AddListing(Listing listing)
 		{
 			marketListings.Add(listing);
-        }
+		}
 
 
 		public List<Listing> SortBySellingItem(Item item)
@@ -34,14 +34,13 @@ namespace MarketSimulation
 		{
 			List<Listing> itemList = new List<Listing>();
 
-			foreach(Listing listing in marketListings)
+			foreach (Listing listing in marketListings)
 			{
 				if (listing.ItemToSell == item)
 				{
 					itemList.Add(listing);
 				}
 			}
-
 			return itemList;
 		}
 
@@ -60,6 +59,15 @@ namespace MarketSimulation
 			}
 
 			return itemList;
+		}
+		public void DisplayAllListings(List<Listing> list)
+		// Returns all listings that are selling the specified item.
+		{
+
+			foreach (Listing Object in list)
+			{
+				Console.WriteLine(Object.ItemToSell.name + " " + Object.NumberToSell + " " + Object.ItemToBuy.name + " " + Object.NumberToBuy + " " + Object.Player.PlayerName);
+			}
 		}
 	}
 }
