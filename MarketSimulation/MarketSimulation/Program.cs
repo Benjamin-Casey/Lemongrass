@@ -49,6 +49,8 @@ namespace MarketSimulation
 
 		public class MarketListingContext : DbContext
 		{
+			public MarketListingContext() : base("name=DefaultConnection")
+			{ }
 			public DbSet<Listing> MarketListings { get; set; }
 		}
 	}

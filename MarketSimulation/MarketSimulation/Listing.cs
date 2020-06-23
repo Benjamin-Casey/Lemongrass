@@ -20,6 +20,9 @@ namespace MarketSimulation
 	 *					the number of the sell items.
 	 */
 	{
+		// There may be some error here with the incrementing ID. It's value may need to be loaded from a db otherwise it will reset to 0.
+		private static int incrementingID = 0;
+		public int Id;
 		public Item ItemToSell { get; set; }
 		public Item ItemToBuy { get; set; }
 		public int NumberToSell { get; set; }
@@ -31,6 +34,8 @@ namespace MarketSimulation
 			ItemToBuy = buyItem;
 			NumberToSell = numberOfSellItem;
 			NumberToBuy = numberOfBuyItem;
+			Id = incrementingID;
+			incrementingID++;
 		}
 	}
 }
