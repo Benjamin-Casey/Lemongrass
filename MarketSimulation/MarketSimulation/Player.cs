@@ -37,8 +37,37 @@ namespace MarketSimulation
 				inventory.Add(item, amt);
 			}
 		}
+		public void AddToInventory()
+		{
+			// Check if item is already in inventory. If it is, add amt.
+			Console.WriteLine("Enter Item Name:");
+			string itemInput = Console.ReadLine();
+			Console.WriteLine("Enter Item Amount:");
+			string amountInput = Console.ReadLine();
+			Item matchedItem = null;
 
-		
+			for (int i = 0; i < Item.itemList.Count; i++)
+			{
+				if (Item.itemList[i].name == itemInput)
+				{
+					matchedItem = Item.itemList[i];
+					break;
+				}
+			}
+
+			if (inventory.ContainsKey(matchedItem))
+			{
+				inventory[matchedItem] += Int32.Parse(amountInput);
+			}
+			else
+			{
+				inventory.Add(matchedItem, Int32.Parse(amountInput));
+			}
+			Console.WriteLine("Added {0} {1}s ", amountInput, matchedItem.name);
+			Console.ReadKey();
+		}
+
+
 		public void RemoveFromInventory(Item item, int amt)
 		// Remove from inventory
 		{
@@ -59,7 +88,7 @@ namespace MarketSimulation
 			return buyListing;
 		}
 
-		public static void CreatePlayer()
+		public static Player CreatePlayer()
 		{
 			
 			Console.WriteLine("Enter Name:");
@@ -69,21 +98,22 @@ namespace MarketSimulation
 			playerList.Add(newPlayer);
 			Console.WriteLine("Welcome {0}", newPlayer.PlayerName);
 
-			/*
-			if(playerList.Count > 0)
-			{
-				Player lastPlayer = playerList[playerList.Count - 1];
-			}
-			else 
-			{
-				add new player with id 0
-			}
-			*/
-
 			Console.ReadKey();
+			return newPlayer;
+		}
+		public static int PlayerIndex(Player player)
+		{
+			Console.WriteLine(playerList.BinarySearch(player));
+			Console.ReadKey();
+			return playerList.BinarySearch(player);
+		}
 
-
-
+		public void displayInventory()
+		{
+			foreach (KeyValuePair<Item, int> item in inventory)
+			{
+				Console.WriteLine("Name: {0}, Amount: {1}", item.Key.name, item.Value);
+			}
 		}
 	}
 }

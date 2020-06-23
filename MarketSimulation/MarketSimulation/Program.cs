@@ -12,10 +12,11 @@ namespace MarketSimulation
 		static void Main(string[] args)
 		{
 
-			//StartMenu();
-			Item.ItemCreation();
-			ObjectCreation();
 
+			
+			Item.ItemCreation();
+			StartMenu();
+			ObjectCreation();
 			/*
 			 * Player p1 = new Player(1,"p1");
 			p1.AddToInventory(Lemon, 1);
@@ -40,15 +41,15 @@ namespace MarketSimulation
 		{
 
 			Console.Clear();
-			Console.WriteLine("\t\tLemon Trading Game");
+			Console.WriteLine("\tLemon Trading Game");
 			Console.WriteLine("1. Create Player");
 			Console.WriteLine("2. Exit Game");
 			string userInput = Console.ReadLine();
 			switch (Int32.Parse(userInput))
 			{
 				case 1:
-					Player.CreatePlayer();
-					MarketMenu();
+					int playerLoginIndex = Player.PlayerIndex(Player.CreatePlayer());
+					MarketMenu(playerLoginIndex);
 					break;
 				case 2:
 					Environment.Exit(1);
@@ -59,7 +60,7 @@ namespace MarketSimulation
 			}
 
 		}
-		public static void MarketMenu()
+		public static void MarketMenu(int playerListIndex)
 		{
 			Console.Clear();
 
@@ -68,9 +69,25 @@ namespace MarketSimulation
 			Console.WriteLine("2. Make Trade Request");
 			Console.WriteLine("3. Show all Trades");
 			Console.WriteLine("4. Trade Filters");
-			//Console.WriteLine("---------Player Stats--------", Player.PlayerName);
-			//Console.WriteLine("Inventory:", Player.inventory);
-			Console.WriteLine("\n5. Main Menu");
+			Console.WriteLine("5. Main Menu");
+			Console.WriteLine("---------{0} Stats--------", Player.playerList[playerListIndex].PlayerName);
+			Console.WriteLine("Inventory:");
+			Player.playerList[playerListIndex].displayInventory();
+
+			string userInput = Console.ReadLine();
+			switch (Int32.Parse(userInput))
+			{
+				case 1:
+					Player.playerList[playerListIndex].AddToInventory();
+					MarketMenu(playerListIndex);
+					break;
+				case 2:
+					
+					break;
+				default:
+					StartMenu();
+					break;
+			}
 		}
 
 		public static void ObjectCreation()
@@ -92,7 +109,7 @@ namespace MarketSimulation
 			Console.ReadLine();
 			for (int i = 0; i < rnd.Next(10,100); i++)
 			{
-				//Player.playerList[rnd.Next(Player.playerList.Count)].AddToInventory(Item.itemList[rndFruitIndex.Next(4)],rnd.Next(1,100));
+				Player.playerList[rnd.Next(0, Player.playerList.Count)].AddToInventory(Item.itemList[rndFruitIndex.Next(0,4)],rnd.Next(1,100));
 				int playerIndex = rnd.Next(0, Player.playerList.Count);
 				Listing newListing = Player.playerList[playerIndex].CreateListing(Item.itemList[rndFruitIndex.Next(0,4)], rnd.Next(1, 100), Item.itemList[rndFruitIndex.Next(0,4)], rnd.Next(1, 100), Player.playerList[playerIndex]);
 				testTown.AddListing(newListing);
