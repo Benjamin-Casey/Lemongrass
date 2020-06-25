@@ -57,11 +57,12 @@ namespace MarketSimulation
 					itemList.Add(listing);
 				}
 			}
-
 			return itemList;
 		}
+
 		public void DisplayAllListings(List<Listing> list)
-		// Returns all listings that are selling the specified item.
+		// Prints all listings from a list of 'Listing' objects
+		// Remove params, instead refer to marketListings
 		{
 
 			foreach (Listing Object in list)
