@@ -20,9 +20,10 @@ namespace MarketSimulation
 		public List<Town> nearbyTowns = new List<Town>();   
 		public Market market;
 
-		public Town(string townName)
+		public Town(string townName, Market marketname)
 		{
 			name = townName;
+			market = marketname;
 		}
 	}
 }

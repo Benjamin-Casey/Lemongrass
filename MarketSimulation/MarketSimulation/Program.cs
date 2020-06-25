@@ -12,11 +12,14 @@ namespace MarketSimulation
 		static void Main(string[] args)
 		{
 
+			//Market lemonMarket = new Market("Lemon Market");
+			//Town lemonTown = new Town("Lemon Town", lemonMarket);
 
-			
+
 			Item.ItemCreation();
+			//ObjectCreation();
 			StartMenu();
-			ObjectCreation();
+			
 			/*
 			 * Player p1 = new Player(1,"p1");
 			p1.AddToInventory(Lemon, 1);
@@ -41,7 +44,7 @@ namespace MarketSimulation
 		{
 
 			Console.Clear();
-			Console.WriteLine("\tLemon Trading Game");
+			Console.WriteLine("Lemon Trading Game");
 			Console.WriteLine("1. Create Player");
 			Console.WriteLine("2. Exit Game");
 			string userInput = Console.ReadLine();
@@ -64,31 +67,58 @@ namespace MarketSimulation
 		{
 			Console.Clear();
 
-			Console.WriteLine("\t\tLemon Trading Game");
+			Player player = Player.playerList[playerListIndex];
+
+			Console.WriteLine("Lemon Trading Game");
 			Console.WriteLine("1. Add Items");
 			Console.WriteLine("2. Make Trade Request");
-			Console.WriteLine("3. Show all Trades");
+			Console.WriteLine("3. Show all Trades at Current Market");
 			Console.WriteLine("4. Trade Filters");
 			Console.WriteLine("5. Main Menu");
-			Console.WriteLine("---------{0} Stats--------", Player.playerList[playerListIndex].PlayerName);
+			Console.WriteLine("---------{0}'s Stats--------", player.PlayerName);
 			Console.WriteLine("Inventory:");
-			Player.playerList[playerListIndex].displayInventory();
-
+			player.displayInventory();
+			Console.WriteLine("---------{0}'s Listings--------", player.PlayerName);
+			player.DisplayAllListings(player.playerListings);
 			string userInput = Console.ReadLine();
 			switch (Int32.Parse(userInput))
 			{
 				case 1:
-					Player.playerList[playerListIndex].AddToInventory();
+					player.AddToInventory();
 					MarketMenu(playerListIndex);
 					break;
 				case 2:
-					
+					player.CreateListing();
+					MarketMenu(playerListIndex);
+					break;
+				case 3:
+					// Need a shortcut to the closest market/town market?
+					Console.Clear();
+					Console.WriteLine("{0} Listings", player.PlayerTown.market.Name);
+					player.PlayerTown.market.DisplayAllListings(player.PlayerTown.market.marketListings);
+					Console.ReadKey();
+					MarketMenu(playerListIndex);
+					break;
+				case 4:
+					TradeFilterMenu();
+					MarketMenu(playerListIndex);
 					break;
 				default:
 					StartMenu();
 					break;
 			}
 		}
+
+		/// <summary>
+		/// filter marketlistings by item sold, item bought, player
+		/// </summary>
+		public static void TradeFilterMenu()
+		{
+            if trade
+                then filter
+                    enD
+		}
+
 
 		public static void ObjectCreation()
 		{
@@ -109,10 +139,10 @@ namespace MarketSimulation
 			Console.ReadLine();
 			for (int i = 0; i < rnd.Next(10,100); i++)
 			{
-				Player.playerList[rnd.Next(0, Player.playerList.Count)].AddToInventory(Item.itemList[rndFruitIndex.Next(0,4)],rnd.Next(1,100));
+				Player.playerList[rnd.Next(0, Player.playerList.Count)].AddToInventory(Item.itemList[rndFruitIndex.Next(0,5)],rnd.Next(1,100));
 				int playerIndex = rnd.Next(0, Player.playerList.Count);
-				Listing newListing = Player.playerList[playerIndex].CreateListing(Item.itemList[rndFruitIndex.Next(0,4)], rnd.Next(1, 100), Item.itemList[rndFruitIndex.Next(0,4)], rnd.Next(1, 100), Player.playerList[playerIndex]);
-				testTown.AddListing(newListing);
+				Listing newListing = Player.playerList[playerIndex].CreateListing(Item.itemList[rndFruitIndex.Next(0,5)], rnd.Next(1, 100), Item.itemList[rndFruitIndex.Next(0,5)], rnd.Next(1, 100), Player.playerList[playerIndex]);
+				//testTown.AddListing(newListing);
 
 			}
 			testTown.DisplayAllListings(testTown.marketListings);
