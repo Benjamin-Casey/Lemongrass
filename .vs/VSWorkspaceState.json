@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Dota The Final One",
+    "\\Dota The Final One\\ts",
+    "\\Dota The Final One\\ts\\windows",
+    "\\Dota The Final One\\ts\\windows\\in_game",
     "\\MarketSimulation\\MarketSimulation"
   ],
-  "SelectedNode": "\\MarketSimulation",
+  "SelectedNode": "\\Dota The Final One\\ts\\windows\\in_game\\in_game.ts",
   "PreviewInSolutionExplorer": false
 }
