@@ -68,6 +68,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database.cs" />
+    <Compile Include="Migrations\202006231353444_InitialCreate.cs" />
+    <Compile Include="Migrations\202006231353444_InitialCreate.designer.cs">
+      <DependentUpon>202006231353444_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006231451558_AddItemName.cs" />
+    <Compile Include="Migrations\202006231451558_AddItemName.designer.cs">
+      <DependentUpon>202006231451558_AddItemName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Listing.cs" />
     <Compile Include="Item.cs" />
@@ -94,6 +104,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006231353444_InitialCreate.resx">
+      <DependentUpon>202006231353444_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006231451558_AddItemName.resx">
+      <DependentUpon>202006231451558_AddItemName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -15,14 +15,17 @@ namespace MarketSimulation
 	 * - value: the hidden value of the item
 	 */
 	{
-		public string name;
-		public int value;
-		// Description not necessary for test.
+		public string Name { get; set; }
+		public int Value { get; set; }
+		public int Id { get; set; }
+		public static int IncrementingId { get; set; }
 
 		public Item(string itemName, int itemValue)
 		{
-			name = itemName;
-			value = itemValue;
+			Name = itemName;
+			Value = itemValue;
+			Id = IncrementingId;
+			//IncrementingId++;
 		}
 	} 
 }
