@@ -1,3 +1,3 @@
 # Lemongrass
 
-Repo for general use.
+Repo for general use. Old projects that are mostly forgotten.
